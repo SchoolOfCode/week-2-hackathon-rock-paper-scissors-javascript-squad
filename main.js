@@ -1,48 +1,60 @@
-let playerMove = ["rock", "paper", "scissors"];
-let computerMove = ["rock", "paper", "scissors"]
-let playerScore = 0;
-let computerScore = 0;
+// let playerMove = "scissors";
+// let computerMove = "rock";
 
-function rockPaperScissors () {
-    const userName = prompt("Please enter your name.")
-}
-
-const playAgain = true;
-
-if (playerMove.includes("rock", "paper", "scissors") && computerMove.includes("rock", "paper", "scissors")) {
-
-    while (playAgain) {
+function getWinner(playerMove, computerMove) { 
     if (playerMove === computerMove) { // change 'Player' to userName ${}
         console.log("It's a tie!");
+        return 0;
     } else if (playerMove === "rock" && computerMove === "scissors") {
         console.log("Player wins!") 
-        playerScore++;
-        computerScore--;
+        return 1;
     } else if (computerMove === "rock" && playerMove === "scissors") {
         console.log("Computer wins!");
-        playerScore--;
-        computerScore++;
+        return -1;
     } else if (playerMove === "rock" && computerMove === "paper") {
         console.log("Computer wins!");
-        playerScore--;
-        computerScore++;
+        return -1;
     } else if (computerMove === "rock" && playerMove === "paper") {
         console.log("Player wins!");
-        playerScore++;
-        computerScore--;
+        return 1;
     } else if (playerMove === "paper" && computerMove === "scissors") {
         console.log("Computer wins!");
-        playerScore--;
-        computerScore++;
+        return -1;
     } else if (computerMove === "paper" && playerMove === "scissors") {
         console.log("Player wins!"); 
-        playerScore++;
-        computerScore--;
+        return 1;
     }
-  }
-} else {
-    alert("Only 'rock', 'paper' or 'scissors' is allowed!");
+     else {
+    console.log("Only rock, paper or scissors is allowed!");
+    return null;
+    }
 }
+
+// let result = getWinner("", "paper")
+// console.log(result); 
+
+let playerMove = prompt("rock, paper or scissors?").toLowerCase();
+let computerMove = "paper";
+
+let result = getWinner(playerMove, computerMove);
+
+// checks the outcome and stores result in result variable 
+
+if (result === 1) { // insert username ${} 
+    alert("You win! (1)");
+} else if (result === 0) {
+    alert("It's a tie! (0)");
+} else if (result === -1) {
+    alert("You lose! (-1)");
+} else {
+    alert("Only rock, paper or scissors is allowed!.");
+}
+
+
+
+
+
+
 
 
 

@@ -82,7 +82,7 @@ function Greeting (userName){
     let count = true;
     while(count === false){
 
-    if(userName >= 10){
+    if(userName <= 10){
         alert("Too long a username")
     } else {
     alert(`hi ${username}`)
