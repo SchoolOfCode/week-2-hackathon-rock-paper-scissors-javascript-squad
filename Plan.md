@@ -49,6 +49,47 @@ function Math.floor(Math.random() *3+1)
 2 = "paper"
 3 = "scissors"
 
-7. Create function asking for user name input
-- Return greeting + name
+5. create a while loop that allows the user to repeat the game as many times as they want 
+start with a global varible at the top that allows the user to play automatic: 
+
+let playerAgain = true;
+
+then put all the game(code) within the while loop:
+
+while(playAgain === false){
+game code here
+}
+then ask the player if they want to play again:
+playAgain = confirm("Do you want again?")
+
+if(!playAgain) {
+alert (`Game over. Here are the results ${win} ${tie} ${lose}`)
+}
+
+6. three different globe varibles to hold to hold the scores:
+
+let wins:
+let loses:
+let draws:
+
+in each if statement after confiming whether lost or won add a ++ to what varible is there.
+then you can add it to task five
+
+7. use a function to take user name and show it back with a hi:
+function Greeting (userName){
+    This bit will test the code to check how long the user name is
+    userName = prompt("what is your name")
+    let count = true;
+    while(count === false){
+
+    if(userName >= 10){
+        alert("Too long a username")
+    } else {
+    alert(`hi ${username}`)
+    count = true
+    }
+    }
+}
+Greeting();
+
 8. Make sure player input is valid (capitals/spelling)
