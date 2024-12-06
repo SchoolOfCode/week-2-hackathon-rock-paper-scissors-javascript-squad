@@ -1,6 +1,17 @@
 // let playerMove = "scissors";
 // let computerMove = "rock";
 
+// let result = getWinner("", "paper")
+// console.log(result); 
+
+let playerMove = prompt("rock, paper or scissors?").toLowerCase();
+let computerMove = "paper";
+
+
+// randomNumber = Math.floor(Math.random() * 3) + 1;
+
+
+
 function getWinner(playerMove, computerMove) { 
     if (playerMove === computerMove) { // change 'Player' to userName ${}
         console.log("It's a tie!");
@@ -30,27 +41,24 @@ function getWinner(playerMove, computerMove) {
     }
 }
 
-// let result = getWinner("", "paper")
-// console.log(result); 
-
-let playerMove = prompt("rock, paper or scissors?").toLowerCase();
-let computerMove = "paper";
-
 let result = getWinner(playerMove, computerMove);
 
 // checks the outcome and stores result in result variable 
 
-if (result === 1) { // insert username ${} 
-    alert("You win! (1)");
-} else if (result === 0) {
-    alert("It's a tie! (0)");
-} else if (result === -1) {
-    alert("You lose! (-1)");
-} else {
-    alert("Only rock, paper or scissors is allowed!.");
+
+switch (result) { // inser username ${}
+    case 1:
+        alert("You win! (1)");
+        break;
+    case 0:
+        alert("It's a tie! (0)");
+        break;
+    case -1:
+        alert("You lose! (-1)");
+        break;
+    default:
+        alert("Only rock, paper, or scissors is allowed!");
 }
-
-
 
 
 
