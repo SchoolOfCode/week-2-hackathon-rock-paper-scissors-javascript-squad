@@ -20,8 +20,6 @@ while(playAgain === true){
 let playerMove = prompt("rock, paper or scissors?").toLowerCase(); 
 let computerMove ;
 
-
-
 // To randomly generate a number for computer move and assign
 const randomNumber =  Math.floor(Math.random() *3+1);  
 if (randomNumber === 1){
@@ -35,8 +33,6 @@ else if (randomNumber === 3){
 }
 // console.log(computerMove);    
 //this shows the computerMove is being randomly generated
-
-
 
 function getWinner(playerMove, computerMove) { 
     if (playerMove === computerMove) { //change 'Player' to userName ${}
@@ -70,7 +66,6 @@ function getWinner(playerMove, computerMove) {
     }
      else {
     console.log("Only rock, paper or scissors is allowed!");
-    return null;
     }
 }
 
@@ -78,10 +73,9 @@ function getWinner(playerMove, computerMove) {
 let result = getWinner(playerMove, computerMove);
 
 
-
-switch (result) { //inser username ${}
+switch (result) { //insert username ${}
     case 1:
-        alert(`you chose ${playerMove}. Computer chose ${computerMove}. You win 1 point`);
+        alert(`You chose ${playerMove}. Computer chose ${computerMove}. You win 1 point`);
         break;
     case 0:
         alert(`You chose ${playerMove}. Computer chose ${computerMove}. You get 0 points`);
@@ -101,30 +95,3 @@ playAgain = confirm("Do you want to play again?");
 if(playAgain === false) {
 alert(`Game over. Here are the results: Wins: ${wins}, Draws: ${draws}, Losses: ${losses}`);
     }
-
-
-
-/* function rockPaperScissors() {
-    let userName;
-    while (userName && userName.length <= 10) {
-        userName = prompt("Please enter your name.")
-    } if (userName && userName.length <= 10) {
-        prompt("Your name cannot be more than 10 characters.")
-    }
-} alert(`Hello, ${userName}`)
-
-rockPaperScissors(); */
-
-/* function askName() {
-    const userName = prompt("Please enter your name")
-
-    if (userName && userName.length <= 10) { // testing to see how long the username is (needs to be less than 10)
-        alert(`Hello, ${userName}`)
-    } else {
-        prompt("Your name cannot be more than 10 characters")
-        return null;
-    } 
-}
-
-askName()
-*/ 
