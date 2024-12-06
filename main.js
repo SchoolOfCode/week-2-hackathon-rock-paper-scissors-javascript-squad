@@ -1,5 +1,19 @@
 // A while loop that starts as true so the game will play once.
 let playAgain = true;
+let wins = 0;
+let losses = 0;
+let draws = 0;
+
+function playerName() {
+    let userName = prompt("Please enter your name.")
+    while (userName.length > 10) {
+       userName = prompt("Your name cannot be more than 10 characters.")
+    }
+    alert(`Hello, ${userName}`);
+
+} 
+playerName();
+
 while(playAgain === true){
 
 //Automatically turns player input into lowercase
@@ -26,25 +40,32 @@ else if (randomNumber === 3){
 
 function getWinner(playerMove, computerMove) { 
     if (playerMove === computerMove) { //change 'Player' to userName ${}
-        console.log("It's a tie!");
+        alert("It's a tie!");
+        draws++;
         return 0;
     } else if (playerMove === "rock" && computerMove === "scissors") {
-        alert("Player wins!") 
+        alert("Player wins!"); 
+        wins++;
         return 1;
     } else if (computerMove === "rock" && playerMove === "scissors") {
         alert("Computer wins!");
+        losses++;
         return -1;
     } else if (playerMove === "rock" && computerMove === "paper") {
         alert("Computer wins!");
+        losses++;
         return -1;
     } else if (computerMove === "rock" && playerMove === "paper") {
         alert("Player wins!");
+        wins++;
         return 1;
     } else if (playerMove === "paper" && computerMove === "scissors") {
         alert("Computer wins!");
+        losses++;
         return -1;
     } else if (computerMove === "paper" && playerMove === "scissors") {
         alert("Player wins!"); 
+        wins++;
         return 1;
     }
      else {
@@ -60,13 +81,13 @@ let result = getWinner(playerMove, computerMove);
 
 switch (result) { //inser username ${}
     case 1:
-        alert(`you chose ${playerMove}. Computer chose ${computerMove}. You win! (1)`);
+        alert(`you chose ${playerMove}. Computer chose ${computerMove}. You win 1 point`);
         break;
     case 0:
-        alert(`You chose ${playerMove}. Computer chose ${computerMove}. It's a tie! (0)`);
+        alert(`You chose ${playerMove}. Computer chose ${computerMove}. You get 0 points`);
         break;
     case -1:
-        alert(`You chose ${playerMove}. Computer chose ${computerMove}. You lose! (-1)`);
+        alert(`You chose ${playerMove}. Computer chose ${computerMove}. 1 point to the computer`);
         break;
     default:
         alert("Only rock, paper, or scissors is allowed!");
@@ -77,15 +98,9 @@ playAgain = confirm("Do you want to play again?");
 }
 
 // These need global variable
-if(!playAgain) {
-alert(`Game over. Here are the results ${win} ${tie} ${lose}`);
+if(playAgain === false) {
+alert(`Game over. Here are the results: Wins: ${wins}, Draws: ${draws}, Losses: ${losses}`);
     }
-
-
-
-
-
-
 
 
 
