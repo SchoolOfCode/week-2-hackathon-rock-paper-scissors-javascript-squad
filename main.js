@@ -4,12 +4,20 @@
 // let result = getWinner("", "paper")
 // console.log(result); 
 
-let playerMove = prompt("rock, paper or scissors?").toLowerCase();
-let computerMove = "paper";
+let playerMove = prompt("rock, paper or scissors?").toLowerCase(); //automatically turns player input into lowercase
+let computerMove ;
 
-
-// randomNumber = Math.floor(Math.random() * 3) + 1;
-
+const randomNumber =  Math.floor(Math.random() *3+1);  // to randomly generate a number for computer move and assign
+if (randomNumber === 1){
+    computerMove = "paper";
+}
+else if (randomNumber === 2){
+    computerMove = "rock";
+}
+else if (randomNumber === 3){
+    computerMove = "scissors";
+}
+// console.log(computerMove);    //this shows the computerMove is being randomly generated
 
 
 function getWinner(playerMove, computerMove) { 

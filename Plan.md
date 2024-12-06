@@ -44,7 +44,8 @@ functiton functionname(playerMove, computerMove){
 4. Task 4: Computer player
 Write a function that generates a random computer move: 
 
-function Math.floor(Math.random() *3+1)
+const randomNumber =  Math.floor(Math.random() *3+1);
+
 1 = "rock"
 2 = "paper"
 3 = "scissors"
