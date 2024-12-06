@@ -1,13 +1,15 @@
-// let playerMove = "scissors";
-// let computerMove = "rock";
+// A while loop that starts as true so the game will play once.
+let playAgain = true;
+while(playAgain === true){
 
-// let result = getWinner("", "paper")
-// console.log(result); 
-
-let playerMove = prompt("rock, paper or scissors?").toLowerCase(); //automatically turns player input into lowercase
+//Automatically turns player input into lowercase
+let playerMove = prompt("rock, paper or scissors?").toLowerCase(); 
 let computerMove ;
 
-const randomNumber =  Math.floor(Math.random() *3+1);  // to randomly generate a number for computer move and assign
+
+
+// To randomly generate a number for computer move and assign
+const randomNumber =  Math.floor(Math.random() *3+1);  
 if (randomNumber === 1){
     computerMove = "paper";
 }
@@ -17,30 +19,32 @@ else if (randomNumber === 2){
 else if (randomNumber === 3){
     computerMove = "scissors";
 }
-// console.log(computerMove);    //this shows the computerMove is being randomly generated
+// console.log(computerMove);    
+//this shows the computerMove is being randomly generated
+
 
 
 function getWinner(playerMove, computerMove) { 
-    if (playerMove === computerMove) { // change 'Player' to userName ${}
+    if (playerMove === computerMove) { //change 'Player' to userName ${}
         console.log("It's a tie!");
         return 0;
     } else if (playerMove === "rock" && computerMove === "scissors") {
-        console.log("Player wins!") 
+        alert("Player wins!") 
         return 1;
     } else if (computerMove === "rock" && playerMove === "scissors") {
-        console.log("Computer wins!");
+        alert("Computer wins!");
         return -1;
     } else if (playerMove === "rock" && computerMove === "paper") {
-        console.log("Computer wins!");
+        alert("Computer wins!");
         return -1;
     } else if (computerMove === "rock" && playerMove === "paper") {
-        console.log("Player wins!");
+        alert("Player wins!");
         return 1;
     } else if (playerMove === "paper" && computerMove === "scissors") {
-        console.log("Computer wins!");
+        alert("Computer wins!");
         return -1;
     } else if (computerMove === "paper" && playerMove === "scissors") {
-        console.log("Player wins!"); 
+        alert("Player wins!"); 
         return 1;
     }
      else {
@@ -49,26 +53,33 @@ function getWinner(playerMove, computerMove) {
     }
 }
 
+//checks the outcome and stores result in result variable 
 let result = getWinner(playerMove, computerMove);
 
-// checks the outcome and stores result in result variable 
 
 
-switch (result) { // inser username ${}
+switch (result) { //inser username ${}
     case 1:
-        alert("You win! (1)");
+        alert(`you chose ${playerMove}. Computer chose ${computerMove}. You win! (1)`);
         break;
     case 0:
-        alert("It's a tie! (0)");
+        alert(`You chose ${playerMove}. Computer chose ${computerMove}. It's a tie! (0)`);
         break;
     case -1:
-        alert("You lose! (-1)");
+        alert(`You chose ${playerMove}. Computer chose ${computerMove}. You lose! (-1)`);
         break;
     default:
         alert("Only rock, paper, or scissors is allowed!");
 }
 
+// Gives player option to either continue or stop.
+playAgain = confirm("Do you want to play again?");
+}
 
+// These need global variable
+if(!playAgain) {
+alert(`Game over. Here are the results ${win} ${tie} ${lose}`);
+    }
 
 
 
